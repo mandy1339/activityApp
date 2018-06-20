@@ -1,6 +1,9 @@
-var express     = require('express');
-
-var app         = express();
+var express             = require('express');
+    mySqlConnection     = require('./server-db.js');
+    // listOfTablesInDb    = require('./models/ListOfTablesInDB.js');
+    // tableData           = require('./models/TableData.js')
+    
+var app                 = express();
 
 
 app.use(express.static(__dirname + "\\activityapp"))

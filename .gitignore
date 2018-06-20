@@ -6,4 +6,4 @@ modern.json*
 /activityapp/ext
 /activityapp/modern
 /node_modules
-
+db-config.json
