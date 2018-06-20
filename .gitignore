@@ -1,0 +1,9 @@
+/activityapp/build
+bootstrap.*
+classic.json*
+modern.json*
+.sencha
+/activityapp/ext
+/activityapp/modern
+/node_modules
+
