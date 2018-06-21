@@ -10,7 +10,8 @@ module.exports = {
                             host: dbConfig.hostname,
                             port: dbConfig.port,
                             user: dbConfig.user,
-                            password: dbConfig.password
+                            password: dbConfig.password,
+                            database: dbConfig.db
         });
         return connection;
     },
