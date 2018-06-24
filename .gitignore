@@ -7,3 +7,4 @@ modern.json*
 /activityapp/modern
 /node_modules
 db-config.json
+/.vscode

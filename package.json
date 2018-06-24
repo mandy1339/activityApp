@@ -19,9 +19,7 @@
   "homepage": "https://github.com/mandy1339/nodeExtjs#readme",
   "dependencies": {
     "express": "~4.11.2",
-    "nodemon": "~1.3.6",
     "mysql": "~2.5.4",
     "nconf": "~0.7.1"
-    
   }
 }

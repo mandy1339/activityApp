@@ -15,7 +15,7 @@ Ext.define('ActivityApp.view.main.Main', {
 
         'ActivityApp.view.main.MainController',
         'ActivityApp.view.main.MainModel',
-        'ActivityApp.view.main.List'
+        'ActivityApp.view.main.user.UserPanel'
     ],
 
     controller: 'main',
@@ -76,11 +76,11 @@ Ext.define('ActivityApp.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
+        title: 'User',
+        iconCls: 'fa-id-badge',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
-            xtype: 'mainlist'
+            xtype: 'userpanel'
         }]
     }, 
     // {

@@ -1,0 +1,16 @@
+{
+    "success": true,
+    "numRows": 2,
+    "data": [
+        {
+            "webuserkey": 1,
+            "username": "staticArmando",
+            "userpassword": "staticSecret"
+        },
+        {
+            "webuserkey": 2,
+            "username": "staticKarol",
+            "userpassword": "staticSecret"
+        }
+    ]
+}
