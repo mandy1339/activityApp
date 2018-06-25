@@ -1,15 +1,18 @@
 var express             = require('express');
     mySqlConnection     = require('./server-db.js');
     userData            = require('./model/UserData.js');
+    path                = require('path');
     // listOfTablesInDb    = require('./models/ListOfTablesInDB.js');
     // tableData           = require('./models/TableData.js')
     
 var app                 = express();
 var connection = mySqlConnection.createConnection();
 
+// FOR WINDOWS FOLDER
+var staticPath = __dirname + "/activityapp";
+var OsSafeStaticPath = path.normalize(staticPath);
+app.use(express.static(OsSafeStaticPath));
 
-app.use(express.static(__dirname + "\\activityapp"));
-// app.use(express.static(__dirname + "\\model"));
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/activityapp/index.html');
