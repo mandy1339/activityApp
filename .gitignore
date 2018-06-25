@@ -8,3 +8,4 @@ modern.json*
 /node_modules
 db-config.json
 /.vscode
+sencha-error*

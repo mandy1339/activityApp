@@ -4,15 +4,17 @@ Ext.define('ActivityApp.view.main.user.UserPanelController', {
     alias: 'controller.userpanelcontroller',
 
     onUserSelected: function(sender, record) {
-        debugger;
         var vm = this.getViewModel();
         var me = this;
         var v  = this.getView();
         vm.set('selectedusername', record.data.username);
         var testvar = vm.get('selectedusername');
-        debugger;
+    },
+
+    onUserSelected2: function(sender, record) {
+        // debugger;
+        var v = this.getView();
+        var panelCenter = this.lookupReference('panelCenter');
+        panelCenter.update(record.data);
     }
-
-
-
 });

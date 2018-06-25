@@ -5,7 +5,7 @@ Ext.define('ActivityApp.store.user.UserStore', {
 
     proxy: {
         type:   'ajax',
-        url:    'api/user/userdata.json',
+        url:    'api/user/getusers.json',
 
         reader: {
             type:           'json',

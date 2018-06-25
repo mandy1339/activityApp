@@ -14,7 +14,7 @@ Ext.define('ActivityApp.view.main.Main', {
         'Ext.window.MessageBox',
 
         'ActivityApp.view.main.MainController',
-        'ActivityApp.view.main.MainModel',
+        'ActivityApp.view.main.MainViewModel',
         'ActivityApp.view.main.user.UserPanel'
     ],
 
@@ -83,13 +83,21 @@ Ext.define('ActivityApp.view.main.Main', {
             xtype: 'userpanel'
         }]
     }, 
+    {
+        title: 'Activities',
+        iconCls: 'fa-soccer-ball-o',
+        layout: 'border',
+        items: [
+            {
+                // xtype: "activitysidebar",
+                region: "west"
+            }, {
+                xtype: "activitygrid",
+                region: "center"
+            }
+        ]
+    }, 
     // {
-    //     title: 'Users',
-    //     iconCls: 'fa-user',
-    //     bind: {
-    //         html: '{loremIpsum}'
-    //     }
-    // }, {
     //     title: 'Groups',
     //     iconCls: 'fa-users',
     //     bind: {
