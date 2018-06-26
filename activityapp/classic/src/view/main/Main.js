@@ -37,42 +37,19 @@ Ext.define('ActivityApp.view.main.Main', {
             },
             flex: 0
         },
-        iconCls: 'fa-th-list'
+        iconCls: 'fa-car'
     },
 
     tabBar: {
-        flex: 1,
         layout: {
-            align: 'stretch',
-            overflowHandler: 'none'
-        }
-    },
-
-    responsiveConfig: {
-        tall: {
-            headerPosition: 'top'
+            pack: 'center'
         },
-        wide: {
-            headerPosition: 'left'
-        }
+        boder: false
     },
 
     defaults: {
-        bodyPadding: 20,
-        tabConfig: {
-            plugins: 'responsive',
-            responsiveConfig: {
-                wide: {
-                    iconAlign: 'left',
-                    textAlign: 'left'
-                },
-                tall: {
-                    iconAlign: 'top',
-                    textAlign: 'center',
-                    width: 120
-                }
-            }
-        }
+        bodyPadding: 15,
+        iconAlign: 'top'   
     },
 
     items: [{
@@ -85,15 +62,11 @@ Ext.define('ActivityApp.view.main.Main', {
     }, 
     {
         title: 'Activities',
+        layout: 'fit',
         iconCls: 'fa-soccer-ball-o',
-        layout: 'border',
         items: [
             {
-                // xtype: "activitysidebar",
-                region: "west"
-            }, {
-                xtype: "activitygrid",
-                region: "center"
+                xtype: "activitysidebar",
             }
         ]
     }, 
