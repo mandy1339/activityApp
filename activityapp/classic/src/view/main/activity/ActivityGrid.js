@@ -3,7 +3,6 @@ Ext.define('ActivityApp.view.main.activity.ActivityGrid', {
     xtype: 'activitygrid',
 
     initComponent: function() {
-        debugger;
         var vm = this.up('app-main').getViewModel();
         var activityStore = Ext.create('ActivityApp.store.activity.ActivityStore');
         vm.set('vmActivityStore', activityStore);

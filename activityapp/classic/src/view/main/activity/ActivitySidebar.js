@@ -18,18 +18,10 @@ Ext.define('ActivityApp.view.main.activity.ActivitySidebar.js', {
     items: [
         {
             title: 'see activities',
-            items: [
-                {
-                    xtype: "activitygrid"
-                }
-            ]
-        },
-        {
-            title: 'create new',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        }
-    ]
+            xtype: "activitygrid"
+        }, {
+            title: 'new activity',
+            xtype: 'createactivityform'
+        }]
 
 });

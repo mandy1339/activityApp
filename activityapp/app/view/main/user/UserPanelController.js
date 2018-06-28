@@ -1,6 +1,5 @@
 Ext.define('ActivityApp.view.main.user.UserPanelController', {
     extend: 'Ext.app.ViewController',
-
     alias: 'controller.userpanelcontroller',
 
     onUserSelected: function(sender, record) {
