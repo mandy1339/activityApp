@@ -16,14 +16,13 @@ Ext.define('ActivityApp.view.main.activity.CreateActivityForm', {
         },
         items: [{
                 xtype: 'textfield',
-                fieldLabel: 'activityid',
+                fieldLabel: 'activity id',
                 name: 'activityid',
                 hidden: true,                   // hidden id field
-                allowBlank: true
+                allowBlank: true,
             },{
                 xtype: 'textfield',
                 fieldLabel: 'name',
-                vtype: 'alpha',
                 name: 'name'
             }, {
                 xtype: 'textarea',
@@ -34,7 +33,7 @@ Ext.define('ActivityApp.view.main.activity.CreateActivityForm', {
             }, {
                 xtype: 'datefield',
                 fieldLabel: 'date',
-                format: 'm-d-Y',
+                format: 'Y-m-d',
                 name: 'date'
             }, {
                 xtype: 'radiogroup',
@@ -54,9 +53,18 @@ Ext.define('ActivityApp.view.main.activity.CreateActivityForm', {
                 xtype: 'radiogroup',
                 fieldLabel: 'daytime?',
                 items: [
-                    {boxLabel: 'yes', name: 'inhouse', inputValue: '1'},
-                    {boxLabel: 'no', name: 'inhouse', inputValue: '0', checked: true},
-                    {boxLabel: 'both', name: 'inhouse', inputValue: '3'}
+                    {boxLabel: 'yes', name: 'daytime', inputValue: '1'},
+                    {boxLabel: 'no', name: 'daytime', inputValue: '0', checked: true},
+                    {boxLabel: 'both', name: 'daytime', inputValue: '3'}
+                ]
+            },
+            {
+                xtype: 'radiogroup',
+                fieldLabel: 'long distance?',
+                tooltip: 'over 30 miles?',              // TODO FIX
+                items: [
+                    {boxLabel: 'yes', name: 'longdist', inputValue: '1'},
+                    {boxLabel: 'no', name: 'longdist', inputValue: '0', checked: true}
                 ]
             }
 

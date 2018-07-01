@@ -1,6 +1,9 @@
 Ext.define('ActivityApp.view.main.activity.ActivityGrid', {
     extend: 'Ext.grid.Panel',
     xtype: 'activitygrid',
+    reference: 'activitygrid',
+    controller: 'activitygridcontroller',
+    model: 'activitygridviewmodel',
 
     initComponent: function() {
         var vm = this.up('app-main').getViewModel();
@@ -21,11 +24,36 @@ Ext.define('ActivityApp.view.main.activity.ActivityGrid', {
                 {text: 'inhouse', dataIndex: 'inhouse', renderer: function(val, meta, rec){
                                                                     return rec.inhouseToYN();}},
                 {text: 'daytime', dataIndex: 'daytime', renderer: function(val, meta, rec){
-                                                                    return rec.daytimeToYN();}}
+                                                                    return rec.daytimeToYN();}},
+                {
+                    xtype: 'actioncolumn',
+                    width: 50,
+                    items: [{
+                        icon: 'resources/images/del-icon.png',
+                        tooltip: 'Delete',
+                        handler: 'onDeleteIconClick'
+                    }]
+                }
                 
             ]
         });
         this.callParent();
+    },
+
+    bbar: [
+        '->',
+        {
+            xtype: 'button',
+            text: 'Refresh',
+            iconCls: 'fa fa-refresh',
+            handler: 'fireRefreshEvents' 
+        }
+    ],
+
+    listeners: {
+        refreshactivities: 'onRefreshActivitiesEvent'
     }
+
+    
 
 });

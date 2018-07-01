@@ -37,7 +37,7 @@ Ext.define('ActivityApp.view.main.Main', {
             },
             flex: 0
         },
-        iconCls: 'fa-car'
+        iconCls: 'fa fa-car'
     },
 
     tabBar: {
@@ -53,23 +53,21 @@ Ext.define('ActivityApp.view.main.Main', {
     },
 
     items: [{
+        title: 'Activities',
+        layout: 'fit',
+        iconCls: 'fa fa-soccer-ball-o',
+        items: [{
+                xtype: "activitysidebar",
+            }]
+    },{
         title: 'User',
-        iconCls: 'fa-id-badge',
+        iconCls: 'fa fa-id-badge',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
             xtype: 'userpanel'
         }]
     }, 
-    {
-        title: 'Activities',
-        layout: 'fit',
-        iconCls: 'fa-soccer-ball-o',
-        items: [
-            {
-                xtype: "activitysidebar",
-            }
-        ]
-    }, 
+     
     // {
     //     title: 'Groups',
     //     iconCls: 'fa-users',

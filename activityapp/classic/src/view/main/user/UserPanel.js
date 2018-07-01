@@ -48,9 +48,8 @@ Ext.define('ActivityApp.view.main.user.UserPanel', {
                 "select": 'onUserSelected2'
             },
         }
-    ],
-    
-    
+    ]
+
 
 
 });

@@ -18,10 +18,17 @@ Ext.define('ActivityApp.view.main.activity.ActivitySidebar.js', {
     items: [
         {
             title: 'see activities',
-            xtype: "activitygrid"
+            xtype: "activitygrid",
+            // listeners: {
+            //     refreshactivities: function() {console.log('REFRESH EVENT AT ACTIVITYSIDEBAR');}
+            // }
         }, {
             title: 'new activity',
             xtype: 'createactivityform'
-        }]
+        }],
+
+    listeners: {
+        refreshactivities: function() {console.log('REFRESH EVENT AT ACTIVITYSIDEBAR');}
+    }
 
 });

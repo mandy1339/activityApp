@@ -265,7 +265,17 @@
             "path": "${build.out.css.path}",
             "bundle": true,
             "exclude": ["fashion"]
+        },
+
+        
+        /////////////////////////////////////////
+        // ARMANDO IS ADDING CUSTOM CSS PATH HERE
+        {
+            "path": "resources/custom_css/custom.css"
         }
+        // ARMANDO IS ADDING CUSTOM CSS PATH HERE
+        /////////////////////////////////////////
+        
     ],
 
     /**

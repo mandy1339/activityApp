@@ -3,11 +3,29 @@ Ext.define('ActivityApp.view.main.activity.CreateActivityFormController', {
     alias: 'controller.createactivityformcontroller',
 
     onClickAdd: function() {
-        debugger;
-        var form = this.lookupReference('createactivityform').getForm().setValues({activityid: null});
-        debugger
-        var x = 1;
-        x = x + 5;
+        var form = this.lookupReference('createactivityform').getForm();
+
+        form.submit({
+            clientValidation: true,
+            url: 'api/activity/addactivity.json',
+            // params: {activityid: null},
+            success: function(form, response) {
+                debugger;
+                console.log('success');
+                Ext.Msg.alert('Success', 'successfully inserted ' + response.result.data.affectedRows + ' activity');
+            },
+            failure: function(form, response) {
+                console.log('failure');
+                console.log(response);
+                debugger;
+                Ext.MessageBox.show({
+                    title: 'FAILURE',
+                    msg: response.errorMessage,
+                    icon: Ext.MessageBox.ERROR,
+                    buttons: Ext.Msg.OK
+                });
+            }
+        });
     }
     
     
@@ -18,6 +36,7 @@ Ext.define('ActivityApp.view.main.activity.CreateActivityFormController', {
     //     formulario.submit({
     //         clientValidation: true,
     //         url: 'server/client/addclient.json',
+    //         params: {activityid: null},
     //         success: function(form, action) {
     //             Ext.Msg.alert('SUCCESS', action.result.msg);
     //             console.log(action.result.success);
