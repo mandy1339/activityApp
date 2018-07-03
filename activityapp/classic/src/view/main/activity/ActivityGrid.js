@@ -52,11 +52,6 @@ Ext.define('ActivityApp.view.main.activity.ActivityGrid', {
 
     listeners: {
         refreshactivities: 'onRefreshActivitiesEvent'
-        // function(componente, c2, c3) {
-        //     debugger;
-        //     console.log('REFRESH DETECTED');
-        //     console.log('xXXxxxXXXxxxxXXXX ' + componente.getXTypes());
-        // }
     }
 
     
