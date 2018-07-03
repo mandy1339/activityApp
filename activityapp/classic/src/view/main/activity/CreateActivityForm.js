@@ -77,7 +77,7 @@ Ext.define('ActivityApp.view.main.activity.CreateActivityForm', {
             text: 'add',
             handler: 'onClickAdd'
         }, {
-            text: 'reset'
+            text: 'reset'                   // TODO CLEAR
         }
     ]
 

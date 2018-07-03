@@ -2,29 +2,67 @@ Ext.define('ActivityApp.view.main.activity.ActivityGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.activitygridcontroller',
 
-    onDeleteIconClick: function() {
+    onDeleteIconClick: function(grid, rowIndex, colIndex) {
+        var v  = this.getView();
+        var vm = this.getViewModel();
+        var me = this;
+        vm.set('selectedRow', rowIndex);
+        vm.set('selectedCol', colIndex);
         debugger;
-        var x = 2
-        var y = x + 5;
+        Ext.Msg.confirm('Delete Confirmation', 'Are you sure you want to delete this entry?',
+                        'onConfirmDelete', me);
     },
 
 
-    onRefreshActivitiesEvent: function(component, p1, p2, p3, p4) {
+
+    onConfirmDelete: function(choice) {
+        var me = this;
+        if (choice === 'yes') {
+            debugger;
+            me.onDeleteYes();
+        }
+    },
+
+
+
+    onDeleteYes: function() {
+        //call procedure on grid record at rowIndex passing activityid
         debugger;
+        var vm          = this.getViewModel(),
+            rowIndex    = vm.get('selectedRow'),
+            v           = this.getView(),
+            actId       = v.getSelectionModel().getSelection()[0].data.activityid;
+
+        Ext.Ajax.request({
+            url: 'api/activity/delactivity.json',
+            params: {activityid: actId},
+
+            success: function(response, opts) {
+                console.log('success on deletion')
+                v.fireEvent('refreshactivities', 'delete button');
+            },
+
+            failure: function(response, opts) {
+                console.log('server-side failure');
+            }
+        });
+    },
+
+
+
+    onRefreshActivitiesEvent: function(msg) {
         var v = this.getView();
         var store = v.getStore();
-        console.log('REFRESH DETECTED');
-        console.log('xXXxxxXXXxxxxXXXX ' + component.type);
+        console.log('Refresh detected sent from: ' + msg);
         store.load();
     },
 
-    fireRefreshEvents: function(){
+
+
+    fireRefreshEvent: function(){
         // console.log('clicked refresh');
         var v = this.getView();
         // debugger;
-        v.fireEvent('refreshactivities', this, 95, 105, 125, 135);
-        v.fireEvent('refreshactivities', 26);
-        v.fireEvent('refreshactivities', 27);
-        v.fireEvent('refreshactivities', 28);
-    }
+        v.fireEvent('refreshactivities', 'grid');
+    },
 });

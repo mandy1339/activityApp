@@ -43,21 +43,27 @@ app.get('/', function (req, res) {
 //////////////////////////////////
 // API SERVICE
 app.get('/api/user/getusers.json', function(req, res) {
-    console.log("mysql get userdata");
+    console.log("mysql - get userdata");
     res.set({'Content-Type': 'application/json'});
     userDataService.getUserData(connection, req, res);
 });
 
 app.get('/api/activity/getactivities.json', function(req, res) {
-    console.log("mysql get activites");
+    console.log("mysql - get activites");
     res.set({'Content-Type': 'application/json'});
     activityDataService.getActivityData(connection, req, res);
 });
 
 app.post('/api/activity/addactivity.json', function(req, res) {
-    console.log("mysql add activity");
+    console.log("mysql - call add activity");
     res.set({'Content-Type': 'application/json'});
     activityDataService.addActivity(connection, req, res);
+});
+
+app.post('/api/activity/delactivity.json', function(req, res) {
+    console.log("mysql - call del activity");
+    res.set({'Content-Type': 'application/json'});
+    activityDataService.delActivity(connection, req, res);
 });
 // API SERVICE
 //////////////////////////////////

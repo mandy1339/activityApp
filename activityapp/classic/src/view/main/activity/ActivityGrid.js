@@ -32,28 +32,26 @@ Ext.define('ActivityApp.view.main.activity.ActivityGrid', {
                         icon: 'resources/images/del-icon.png',
                         tooltip: 'Delete',
                         handler: 'onDeleteIconClick'
-                    }]
+                    }],
+                    stopSelection: false        // Allows use of getSelectionModel().getSelection()
                 }
                 
-            ]
+            ],
+            scrollable: true
         });
         this.callParent();
     },
 
     bbar: [
         '->',
-        {
-            xtype: 'button',
-            text: 'Refresh',
-            iconCls: 'fa fa-refresh',
-            handler: 'fireRefreshEvents' 
-        }
-    ],
+    {
+        xtype: 'button',
+        text: 'Refresh',
+        iconCls: 'fa fa-refresh',
+        handler: 'fireRefreshEvent',
+    }],
 
     listeners: {
-        refreshactivities: 'onRefreshActivitiesEvent'
-    }
-
-    
-
+        refreshactivities: 'onRefreshActivitiesEvent',
+    },
 });

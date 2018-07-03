@@ -1,6 +1,8 @@
 Ext.define('ActivityApp.view.main.activity.ActivitySidebar.js', {
     extend: 'Ext.tab.Panel',
     xtype: 'activitysidebar',
+    controller: 'activitysidebarcontroller',
+    model: 'activitysidebarviewmodel',
 
     ui: 'navigation',
     tabPosition: 'left',
@@ -19,16 +21,8 @@ Ext.define('ActivityApp.view.main.activity.ActivitySidebar.js', {
         {
             title: 'see activities',
             xtype: "activitygrid",
-            // listeners: {
-            //     refreshactivities: function() {console.log('REFRESH EVENT AT ACTIVITYSIDEBAR');}
-            // }
         }, {
             title: 'new activity',
             xtype: 'createactivityform'
         }],
-
-    listeners: {
-        refreshactivities: function() {console.log('REFRESH EVENT AT ACTIVITYSIDEBAR');}
-    }
-
 });

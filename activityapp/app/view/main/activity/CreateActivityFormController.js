@@ -10,14 +10,12 @@ Ext.define('ActivityApp.view.main.activity.CreateActivityFormController', {
             url: 'api/activity/addactivity.json',
             // params: {activityid: null},
             success: function(form, response) {
-                debugger;
                 console.log('success');
                 Ext.Msg.alert('Success', 'successfully inserted ' + response.result.data.affectedRows + ' activity');
             },
             failure: function(form, response) {
                 console.log('failure');
                 console.log(response);
-                debugger;
                 Ext.MessageBox.show({
                     title: 'FAILURE',
                     msg: response.errorMessage,

@@ -31,4 +31,4 @@ DELIMITER ;
 
 
 -- EXAMPLE USE:
--- call activityappdb.add_activity('qqwer', '2018-05-05', '213sdaf sadfsjaldfk ', 1, 1, 1, 1);
+-- CALL activityappdb.add_activity('qqwer', '2018-05-05', '213sdaf sadfsjaldfk ', 1, 1, 1, 1);
