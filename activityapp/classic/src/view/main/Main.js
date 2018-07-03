@@ -56,13 +56,10 @@ Ext.define('ActivityApp.view.main.Main', {
         title: 'Activities',
         layout: 'fit',
         iconCls: 'fa fa-soccer-ball-o',
-        items: [{
-                xtype: "activitysidebar",
-            }]
+        xtype: "activitysidebar"
     },{
         title: 'User',
         iconCls: 'fa fa-id-badge',
-        // The following grid shares a store with the classic version's grid as well!
         items: [{
             xtype: 'userpanel'
         }]
