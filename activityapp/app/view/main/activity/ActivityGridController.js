@@ -8,7 +8,6 @@ Ext.define('ActivityApp.view.main.activity.ActivityGridController', {
         var me = this;
         vm.set('selectedRow', rowIndex);
         vm.set('selectedCol', colIndex);
-        debugger;
         Ext.Msg.confirm('Delete Confirmation', 'Are you sure you want to delete this entry?',
                         'onConfirmDelete', me);
     },
@@ -18,7 +17,6 @@ Ext.define('ActivityApp.view.main.activity.ActivityGridController', {
     onConfirmDelete: function(choice) {
         var me = this;
         if (choice === 'yes') {
-            debugger;
             me.onDeleteYes();
         }
     },
@@ -27,7 +25,6 @@ Ext.define('ActivityApp.view.main.activity.ActivityGridController', {
 
     onDeleteYes: function() {
         //call procedure on grid record at rowIndex passing activityid
-        debugger;
         var vm          = this.getViewModel(),
             rowIndex    = vm.get('selectedRow'),
             v           = this.getView(),
@@ -60,9 +57,7 @@ Ext.define('ActivityApp.view.main.activity.ActivityGridController', {
 
 
     fireRefreshEvent: function(){
-        // console.log('clicked refresh');
         var v = this.getView();
-        // debugger;
         v.fireEvent('refreshactivities', 'grid');
     },
 });

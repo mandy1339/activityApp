@@ -13,7 +13,7 @@ Ext.define('ActivityApp.view.main.activity.ActivityGrid', {
         Ext.apply(this, {
             store: activityStore,
             columns: [
-                {text: 'id', dataIndex: 'activityid'},
+                {text: 'id', dataIndex: 'activityid', align: 'center', width: 39},
                 {text: 'name', dataIndex: 'name', flex:1},
                 {text: 'description', dataIndex: 'description', flex: 3},
                 {text: 'date', dataIndex: 'date', renderer: Ext.util.Format.dateRenderer('d F, Y')},
@@ -37,7 +37,7 @@ Ext.define('ActivityApp.view.main.activity.ActivityGrid', {
                 }
                 
             ],
-            scrollable: true
+            scrollable: true,           
         });
         this.callParent();
     },

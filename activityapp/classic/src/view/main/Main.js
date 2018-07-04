@@ -48,7 +48,7 @@ Ext.define('ActivityApp.view.main.Main', {
     },
 
     defaults: {
-        bodyPadding: 15,
+        // bodyPadding: 0,
         iconAlign: 'top'   
     },
 

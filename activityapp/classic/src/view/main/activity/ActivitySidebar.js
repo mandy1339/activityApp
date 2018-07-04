@@ -14,13 +14,14 @@ Ext.define('ActivityApp.view.main.activity.ActivitySidebar.js', {
 
     defaults: {
         textAlign: 'left',
-        bodyPadding: 15
+        // bodyPadding: 0
     },
 
     items: [
         {
             title: 'see activities',
             xtype: "activitygrid",
+
         }, {
             title: 'new activity',
             xtype: 'createactivityform'
